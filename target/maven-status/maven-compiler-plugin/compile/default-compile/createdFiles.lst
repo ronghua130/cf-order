@@ -1,0 +1,12 @@
+coffeeshop\OrderCanceled.class
+coffeeshop\Application.class
+coffeeshop\Order.class
+coffeeshop\OrderController.class
+coffeeshop\OrderPlaced.class
+coffeeshop\OrderRepository.class
+coffeeshop\PolicyHandler.class
+coffeeshop\AbstractEvent.class
+coffeeshop\config\kafka\KafkaProcessor.class
+coffeeshop\external\Payment.class
+coffeeshop\external\PaymentService.class
+coffeeshop\AbstractEvent$1.class
