@@ -7,7 +7,8 @@ public class OrderPlaced extends AbstractEvent {
     private Integer qty;
     private String coffeeName;
     private Float price;
-    private String status;
+    private String orderStatus;
+
 
     public OrderPlaced(){
         super();
@@ -48,10 +49,10 @@ public class OrderPlaced extends AbstractEvent {
         this.price = price;
     }
 
-    public String getStatus() {
-        return status;
+    public String getOrderStatus() {
+        return orderStatus;
     }
-    public void setStatus(String status) {
-        this.status = status;
+    public void setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
     }
 }

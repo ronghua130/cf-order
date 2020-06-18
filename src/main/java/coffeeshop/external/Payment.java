@@ -12,7 +12,8 @@ public class Payment {
     private Float price;
     private Integer qty;
     private Float totalAmount;
-    private String status;
+    private String orderStatus;
+    private String paymentStatus;
     private String coffeeName;
 
     public Long getPaymentId() {
@@ -57,11 +58,18 @@ public class Payment {
         this.totalAmount = totalAmount;
     }
 
-    public String getStatus() {
-        return status;
+    public String getOrderStatus() {
+        return orderStatus;
     }
-    public void setStatus(String status) {
-        this.status = status;
+    public void setOrderStatus(String orderStatus) {
+        this.orderStatus = orderStatus;
+    }
+
+    public String getPaymentStatus() {
+        return paymentStatus;
+    }
+    public void setPaymentStatus(String paymentStatus) {
+        this.paymentStatus = paymentStatus;
     }
 
     public String getCoffeeName() {

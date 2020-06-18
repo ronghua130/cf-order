@@ -21,7 +21,11 @@ public class Order {
         OrderPlaced orderPlaced = new OrderPlaced();
         orderPlaced.setOrderId(this.getOrderId());
         BeanUtils.copyProperties(this, orderPlaced);
-        orderPlaced.setStatus("Order Placed");
+        orderPlaced.setCoffeeId(this.getCoffeeId());
+        orderPlaced.setCoffeeName(this.getCoffeeName());
+        orderPlaced.setPrice(this.getPrice());
+        orderPlaced.setQty(this.getQty());
+        orderPlaced.setOrderStatus("Order Placed");
         orderPlaced.publishAfterCommit();
 
         //Following code causes dependency to external APIs
@@ -35,7 +39,8 @@ public class Order {
         payment.setPrice(this.getPrice());
         payment.setQty(this.getQty());
         payment.setTotalAmount(this.getPrice() * this.getQty());
-        payment.setStatus("Paid");
+        payment.setOrderStatus(orderPlaced.getOrderStatus());
+        payment.setPaymentStatus("Paid");
 
         Application.applicationContext.getBean(coffeeshop.external.PaymentService.class)
             .pay(payment);
