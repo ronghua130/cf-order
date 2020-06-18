@@ -13,7 +13,7 @@ spring:
     stream:
       kafka:
         binder:
-          brokers: yhandhs-PC.localdomain:9092
+          brokers: 10.250.172.176:9092
         streams:
           binder:
             configuration:
@@ -30,6 +30,11 @@ spring:
         event-out:
           destination: coffeeshop
           contentType: application/json
+feign:
+  payment:
+    url: localhost:8083
+  hystrix:
+    enabled: true
 
 logging:
   level:
@@ -81,3 +86,7 @@ spring:
         event-out:
           destination: coffeeshop
           contentType: application/json
+
+feign:
+  payment:
+    url: payment:8080
