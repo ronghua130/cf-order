@@ -19,8 +19,9 @@ public class Order {
     @PostPersist
     public void onPostPersist() throws InterruptedException {
         OrderPlaced orderPlaced = new OrderPlaced();
-        orderPlaced.setOrderId(this.getOrderId());
+      
         BeanUtils.copyProperties(this, orderPlaced);
+        orderPlaced.setOrderId(this.getOrderId());
         orderPlaced.setCoffeeId(this.getCoffeeId());
         orderPlaced.setCoffeeName(this.getCoffeeName());
         orderPlaced.setPrice(this.getPrice());
